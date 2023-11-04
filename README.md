@@ -6,7 +6,7 @@ Written by [Paul Hudson](https://www.hackingwithswift.com/about)  ![twitter16](h
 
 - Setting up
 
-- Scheduling notifications: UNUserNotificationCenter and UNNotificationRequest
+- Scheduling notifications: `UNUserNotificationCenter` and `UNNotificationRequest`
 
 - Acting on responses
 
