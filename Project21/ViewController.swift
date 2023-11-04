@@ -54,7 +54,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         
-        let show = UNNotificationAction(identifier: "Show", title: "Tell me more...",options: .foreground)
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more...",options: .foreground)
         let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
         center.setNotificationCategories([category])
      }
@@ -68,8 +68,14 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             case UNNotificationDefaultActionIdentifier:
                 //the user swiped to unlock
                 print("default identifier")
+                let ac = UIAlertController(title: "Response", message: "User swiped to unlock", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+                present(ac, animated: true)
             case "show":
                 print("Show more information...")
+                let ac = UIAlertController(title: "Response", message: "User needs more information...", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+                present(ac, animated: true)
             default:
                 break
             }
